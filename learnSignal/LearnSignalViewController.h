@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LearnSignalViewController : UIViewController
+@interface LearnSignalViewController : UIViewController<NSStreamDelegate>
 
 @property (strong, nonatomic) NSInputStream *inputStream;
-@property (strong, nonatomic) NSOutputStream *outpushStram;
+@property (strong, nonatomic) NSOutputStream *outputStream;
 @property (strong, nonatomic) NSString *ip;
 @property (weak, nonatomic) IBOutlet UIButton *isLearnBtn;
 @property (weak, nonatomic) IBOutlet UIButton *onOffBtn;
 - (IBAction)clickLearnBtn:(id)sender;
+
+- (IBAction)clickOnOffBtn:(id)sender;
+
 @end

@@ -72,7 +72,7 @@ NSString *ip;
     if([[segue identifier] isEqualToString:@"pushToLearnSignalSegue"]){
         LearnSignalViewController *lsViewController = (LearnSignalViewController *)[segue destinationViewController];
         lsViewController.inputStream = inputStream;
-        lsViewController.outpushStram = outputStream;
+        lsViewController.outputStream = outputStream;
         lsViewController.ip = ip;
         
     }

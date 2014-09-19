@@ -58,6 +58,7 @@
 		BE0C081A19CB1EC900B15915 /* NetworkConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkConnectViewController.m; sourceTree = "<group>"; };
 		BE0C081C19CB1EDD00B15915 /* LearnSignalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnSignalViewController.h; sourceTree = "<group>"; };
 		BE0C081D19CB1EDD00B15915 /* LearnSignalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnSignalViewController.m; sourceTree = "<group>"; };
+		BE39CA4F19CBA35900B6C95F /* buttonRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buttonRef.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +135,7 @@
 		BE0C07E819CB165800B15915 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE39CA4F19CBA35900B6C95F /* buttonRef.h */,
 				BE0C07E919CB165800B15915 /* learnSignal-Info.plist */,
 				BE0C07EA19CB165800B15915 /* InfoPlist.strings */,
 				BE0C07ED19CB165800B15915 /* main.m */,
@@ -479,6 +481,7 @@
 				BE0C081519CB165800B15915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE0C081619CB165800B15915 /* Build configuration list for PBXNativeTarget "learnSignalTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +490,7 @@
 				BE0C081819CB165800B15915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
