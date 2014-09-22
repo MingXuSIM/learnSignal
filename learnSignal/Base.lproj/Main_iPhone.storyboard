@@ -79,13 +79,43 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ab-uX-9jL">
-                                <rect key="frame" x="137" y="203" width="46" height="30"/>
+                                <rect key="frame" x="139" y="256" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="ON/OFF">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickOnOffBtn:" destination="1wi-mm-3wd" eventType="touchUpInside" id="cSd-xa-E7M"/>
+                                    <action selector="clickFunctionBtn:" destination="1wi-mm-3wd" eventType="touchUpInside" id="Ke2-lq-uBo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im5-2d-Htb">
+                                <rect key="frame" x="139" y="206" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickFunctionBtn:" destination="1wi-mm-3wd" eventType="touchUpInside" id="kV4-AI-yNP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xx-uJ-Ri0">
+                                <rect key="frame" x="221" y="256" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button4">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickFunctionBtn:" destination="1wi-mm-3wd" eventType="touchUpInside" id="IDy-su-F38"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1A-h0-URs">
+                                <rect key="frame" x="62" y="256" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickFunctionBtn:" destination="1wi-mm-3wd" eventType="touchUpInside" id="lhV-Op-zS3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQD-NN-R2W">
@@ -98,13 +128,27 @@
                                     <action selector="clickLearnBtn:" destination="1wi-mm-3wd" eventType="touchUpInside" id="j47-DL-uTZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYc-WS-jc8">
+                                <rect key="frame" x="140" y="309" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickFunctionBtn:" destination="1wi-mm-3wd" eventType="touchUpInside" id="yNy-as-BUh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="pfE-hO-eX2"/>
                     <connections>
                         <outlet property="isLearnBtn" destination="SQD-NN-R2W" id="7Zj-xF-lJD"/>
-                        <outlet property="onOffBtn" destination="0Ab-uX-9jL" id="IC0-Ta-ryN"/>
+                        <outletCollection property="functionBtn" destination="0Ab-uX-9jL" id="FaY-Wf-w5y"/>
+                        <outletCollection property="functionBtn" destination="im5-2d-Htb" id="Fc7-Gu-R0I"/>
+                        <outletCollection property="functionBtn" destination="hYc-WS-jc8" id="Mil-6F-Mtc"/>
+                        <outletCollection property="functionBtn" destination="Y1A-h0-URs" id="fvn-6I-OLA"/>
+                        <outletCollection property="functionBtn" destination="0Xx-uJ-Ri0" id="5F3-kh-MF6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nm6-5E-QrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

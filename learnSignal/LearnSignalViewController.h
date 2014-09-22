@@ -14,9 +14,10 @@
 @property (strong, nonatomic) NSOutputStream *outputStream;
 @property (strong, nonatomic) NSString *ip;
 @property (weak, nonatomic) IBOutlet UIButton *isLearnBtn;
-@property (weak, nonatomic) IBOutlet UIButton *onOffBtn;
+
 - (IBAction)clickLearnBtn:(id)sender;
 
-- (IBAction)clickOnOffBtn:(id)sender;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *functionBtn;
 
+- (IBAction)clickFunctionBtn:(id)sender;
 @end

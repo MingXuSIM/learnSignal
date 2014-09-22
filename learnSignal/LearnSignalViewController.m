@@ -17,7 +17,7 @@
 @synthesize inputStream;
 @synthesize outputStream;
 @synthesize isLearnBtn;
-
+@synthesize functionBtn;
 bool isLearn;
 int buttonIndex;
 NSMutableDictionary *dictionary;
@@ -38,6 +38,10 @@ NSMutableDictionary *dictionary;
     [[self isLearnBtn] setTitle:@"Use" forState:UIControlStateNormal];
     isLearn = false;
     dictionary = [[NSMutableDictionary alloc] init];
+    for (int i = 0; i<5; i++) {
+        NSLog(@"%d",[functionBtn[i] tag]);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,10 +76,30 @@ NSMutableDictionary *dictionary;
         
 }
 
-- (IBAction)clickOnOffBtn:(id)sender {
-    buttonIndex = 0;
-    [self sendMessage:buttonIndex];
-}
+
+
+- (IBAction)clickFunctionBtn:(id)sender {
+    if (isLearn == false) {
+        [self sendMessage:[sender tag]];
+    }
+    else
+    {
+        /*for (int i; i<5; i++) {
+            [functionBtn[i] setBackgroundColor:[UIColor whiteColor]];
+        }*/
+        
+        [functionBtn[buttonIndex] setBackgroundColor:[UIColor whiteColor]];
+        buttonIndex = [sender tag];
+        if ([sender isMemberOfClass:[UIButton class]])
+        {
+            UIButton *btn = (UIButton *)sender;
+            
+            // Then you can reference the title or a tag of the clicked button to do some further conditional logic if you want.
+            [btn setBackgroundColor:[UIColor blackColor]];
+                }
+    }
+    
+   }
 
 - (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent
 {
@@ -144,12 +168,15 @@ NSMutableDictionary *dictionary;
     //when sending the message, use send it to the Device
     //[NSString stringWithFormat:@"%d", buttonIndex];
     [dictionary setObject:message forKey:[NSString stringWithFormat:@"%d", buttonIndex]];
+    
+    [functionBtn[buttonIndex] setBackgroundColor:[UIColor whiteColor]];
     }
 
 - (void) sendMessage:(int)index
 {
-    NSString *response  = @"lets start chat";   //change this to the string stored in the dictionary
-    
+    NSString *response  = @"lets start chat";
+    //change this to the string stored in the dictionary
+    NSLog(@"%d",index);
     NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
     [outputStream write:[data bytes] maxLength:[data length]];
 }
