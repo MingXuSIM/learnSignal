@@ -73,6 +73,9 @@ NSString *ip;
         LearnSignalViewController *lsViewController = (LearnSignalViewController *)[segue destinationViewController];
         lsViewController.inputStream = inputStream;
         lsViewController.outputStream = outputStream;
+        
+        [lsViewController.inputStream setDelegate:lsViewController];
+        [lsViewController.outputStream setDelegate:lsViewController];
         lsViewController.ip = ip;
         
     }

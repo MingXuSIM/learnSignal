@@ -40,6 +40,9 @@ NSMutableDictionary *dictionary;
     dictionary = [[NSMutableDictionary alloc] init];
     for (int i = 0; i<5; i++) {
         NSLog(@"%d",[functionBtn[i] tag]);
+        NSString *initObject = [NSString stringWithFormat:@"%d", i];
+        [dictionary setObject:initObject forKey:[NSString stringWithFormat:@"%d", i]];
+        //dictionary setObject:<#(id)#> forKey:<#(id<NSCopying>)#>
     }
     
 }
@@ -120,7 +123,7 @@ NSMutableDictionary *dictionary;
                         
                         if (nil != output) {
                             
-                            //NSLog(@"\nreciving data------%@",buffer);
+                            NSLog(@"\nreciving data------%s",buffer);
                                   
                                   [self messageReceived:output];
                                   
@@ -168,14 +171,17 @@ NSMutableDictionary *dictionary;
     //when sending the message, use send it to the Device
     //[NSString stringWithFormat:@"%d", buttonIndex];
     [dictionary setObject:message forKey:[NSString stringWithFormat:@"%d", buttonIndex]];
+    NSLog(@"receive learn signal %@ for button%d\n",message,buttonIndex);
     
     [functionBtn[buttonIndex] setBackgroundColor:[UIColor whiteColor]];
     }
 
 - (void) sendMessage:(int)index
 {
-    NSString *response  = @"lets start chat";
+    //NSString *response  = @"lets start chat";
+    
     //change this to the string stored in the dictionary
+    NSString *response = [dictionary objectForKey:[NSString stringWithFormat:@"%d",index]];
     NSLog(@"%d",index);
     NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
     [outputStream write:[data bytes] maxLength:[data length]];
